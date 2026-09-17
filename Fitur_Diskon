@@ -1,0 +1,80 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPg+JmX5ezwsBf0o/nNKfX+",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/ntaangelita-del/sistem-panen-istanti-angelita/blob/fitur-diskon/Fitur_Diskon\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "iP7MZrYF2Gpw",
+        "outputId": "661ec1b0-1f97-4acf-da7f-a8f8e1f09f6d"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan jumlah lahan: 1000\n",
+            "Masukkan hasil panen per lahan (kg): 20\n",
+            "Masukkan persentase diskon (%): 15\n",
+            "Total hasil panen: 20000.0 kg\n",
+            "Total setelah diskon: 17000.0 kg\n"
+          ]
+        }
+      ],
+      "source": [
+        "def hitung_total_panen():\n",
+        "    jumlah_lahan = int(input(\"Masukkan jumlah lahan: \"))\n",
+        "    hasil_per_lahan = float(input(\"Masukkan hasil panen per lahan (kg): \"))\n",
+        "\n",
+        "    total = jumlah_lahan * hasil_per_lahan\n",
+        "    return total\n",
+        "\n",
+        "\n",
+        "def hitung_diskon(total, persen_diskon):\n",
+        "    diskon = total * persen_diskon / 100\n",
+        "    total_setelah_diskon = total - diskon\n",
+        "    return total_setelah_diskon\n",
+        "\n",
+        "\n",
+        "# Menghitung total hasil panen\n",
+        "total = hitung_total_panen()\n",
+        "\n",
+        "# Menghitung diskon\n",
+        "persen_diskon = float(input(\"Masukkan persentase diskon (%): \"))\n",
+        "\n",
+        "total_akhir = hitung_diskon(total, persen_diskon)\n",
+        "\n",
+        "print(f\"Total hasil panen: {total} kg\")\n",
+        "print(f\"Total setelah diskon: {total_akhir} kg\")"
+      ]
+    }
+  ]
+}
